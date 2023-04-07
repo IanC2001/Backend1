@@ -47,3 +47,15 @@ console.log(product);
 // Obtener un producto que no existe
 const productNotFound = manager.getProductById(9999);
 console.log(productNotFound);
+
+const fs = require('fs');
+
+const fillname = './ejemplo.txt'
+const obj = manager
+
+
+
+fs.writeFileSync(fillname, JSON.stringify(obj, null, '\t'))
+const contenido = JSON.parse(fs.readFileSync(fillname, 'utf-8'))
+ contenido.precio= 2000
+fs.writeFileSync(fillname, JSON.stringify(contenido,null, '\t'))
